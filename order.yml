@@ -1,0 +1,36 @@
+server:
+  port: 8002
+
+eureka:
+  instance:
+    hostname: order1
+    metadata-map:
+      a: zhangsan
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+
+spring:
+  application:
+    name: order #服务名
+  rabbitmq:
+    addresses: 49.234.211.90:5672
+    connection-timeout: 10000
+    password: guest
+    publisher-confirm-type: simple
+    publisher-returns: true
+    template:
+      mandatory: true
+    username: guest
+    virtual-host: /
+PRODUCT:
+  ribbon:
+    #NFLoadBalancerRuleClassName: cn.cdqf.order.ribbon.MyIRule
+    #请求链接超时时间
+    ConnectTimeout: 2000
+    #请求处理超时时间 默认值是1秒
+    ReadTimeout: 1000
+    #对所有操作都进行重试
+    OkToRetryOnAllOperatins: true  #Okhttp
+    MaxAutoRetries: 2  #对当前选择的实例重试次数，不包括第一次
+    MaxAutoRetriesNextServer: 1 #切换的重试次数
