@@ -15,7 +15,7 @@ spring:
     username: guest
     virtual-host: /
 bus:
-  test: zfy
+  test: lbb
 PRODUCT:
   ribbon:
     #NFLoadBalancerRuleClassName: cn.cdqf.order.ribbon.MyIRule
