@@ -1,15 +1,6 @@
 server:
   port: 8002
 
-eureka:
-  instance:
-    hostname: order1
-    metadata-map:
-      a: zhangsan
-  client:
-    service-url:
-      defaultZone: http://localhost:8762/eureka/
-
 spring:
   application:
     name: order #服务名
